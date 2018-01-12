@@ -6,6 +6,6 @@ export default class Template {
   }
 
   render() {
-    return this.template.clodeNode(true);
+    return this.template.cloneNode(true);
   }
 }
