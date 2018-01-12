@@ -41,8 +41,24 @@ export default class App {
         this.paging.update(this.pageIndex, 20, total);
         this.loading.classList.add('hidden');
       });
-  }
+  } //runSearch
 
-  
+  render() {
+    const dom = template.render();
+
+    this.loading = dom.getElementById('loading');
+    this.articlesSection = dom.getElementById('articles');
+
+    const searchSection = dom.getElementById('search');
+    const search = new Search(searchTerm => this.handleSearch(searchTerm));
+    searchSection.appendChild(search.render());
+
+    const pagingSection = dom.getElementById('paging');
+    this.paging = new Paging(pageIndex => this.handlePaging(pageIndex));
+    pagingSection.appendChild(this.paging.render());
+
+    return dom;
+
+  } //render
 
 }
