@@ -5,7 +5,7 @@ import Template from '../Template';
 const template = new Template(html);
 
 export default class Article {
-  constructor(article) {
-    
+  constructor(articleInfo) {
+    this.articleInfo = articleInfo;
   }
 }
