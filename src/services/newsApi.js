@@ -7,10 +7,9 @@ export function searchAllArticles(searchTerm, pageIndex = 0) {
   const url = `${NEWS_URL}everything?q=${searchTerm}&sortBy=relevancy&page=${pageIndex}&${KEY}`;
 
   return checkStorage(url);
-
 }
 
-export function searchTopArticles(category, pageIndex = 0) {
+export function searchByCategory(category, pageIndex = 0) {
   const url = `${NEWS_URL}top-headlines?q=${category}&sortBy=relevancy&page=${pageIndex}&${KEY}`; // category: business entertainment general health science sports technology
 
   return checkStorage(url);
