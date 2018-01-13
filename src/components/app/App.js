@@ -19,7 +19,7 @@ export default class App {
 
   handleSearch(searchTerm) {
     this.searchTerm = searchTerm;
-    this.pageIndex = 0;
+    this.pageIndex = 1;
     this.runSearch();
   }
 

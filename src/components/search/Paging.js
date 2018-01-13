@@ -11,9 +11,9 @@ export default class Paging{
 
   update(pageIndex, perPage, total) {
     const totalPages = Math.floor(total / perPage);
-    this.total.textContent = `showing page ${pageIndex + 1} of ${totalPages} (${total} total results) `;
+    this.total.textContent = `showing page ${pageIndex} of ${totalPages} (${total} total results) `;
     this.pageIndex = pageIndex;
-    this.previous.disabled = pageIndex <= 0;
+    this.previous.disabled = pageIndex <= 1;
     this.next.disabled = pageIndex >= total;
   }
 
