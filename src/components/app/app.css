@@ -1,3 +1,21 @@
-.greeting {
-    color:steelblue;
-}
+.hidden {
+    display: none;
+  }
+
+  .clip {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  #loading {
+    position: absolute;
+    z-index: 1;
+    top: 0; bottom: 0;
+    right: 0; left: 0;
+    color: blue;
+    background: white;
+    opacity: .7;
+    text-align: center;
+    padding-top: 100px;
+  }
