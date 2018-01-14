@@ -13,7 +13,7 @@ export default class ArticleList {
     const dom = template.render();
     const ul = dom.querySelector('ul');
 
-    this.articles //returning undefined
+    this.articles
       .map(article => new Article(article))
       .map(articleComponent => articleComponent.render())
       .forEach(articleDom => ul.appendChild(articleDom));

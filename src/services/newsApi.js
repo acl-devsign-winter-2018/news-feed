@@ -8,11 +8,11 @@ export function searchAllArticles(searchTerm, pageIndex = 1) {
   return checkStorage(url);
 }
 
-// export function searchByCategory(category, pageIndex = 1) {
-//   const url = `${NEWS_URL}top-headlines?q=${category}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; // category: business entertainment general health science sports technology
+export function searchByCategory(category, pageIndex = 1) {
+  const url = `${NEWS_URL}top-headlines?q=${category}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; // category: business entertainment general health science sports technology
 
-//   return checkStorage(url);
-// }
+  return checkStorage(url);
+}
 
 function checkStorage(url) {
   const data = storage.getItem(url);

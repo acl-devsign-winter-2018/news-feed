@@ -2,6 +2,7 @@ import Template from '../Template';
 import html from './app.html';
 import './app.css';
 import Search from '../search/Search';
+import Category from '../search/Category';
 import Paging from '../search/Paging';
 import ArticleList from '../articles/ArticleList';
 import { searchAllArticles } from '../../services/newsApi';
@@ -11,11 +12,11 @@ const template = new Template(html);
 
 export default class App {
 
-  // handleCategory(category) {
-  //   this.category = category;
-  //   this.pageIndex = 0;
-  //   this.runCategory();
-  // }
+  handleCategory(category) {
+    this.category = category;
+    this.pageIndex = 1;
+    this.runCategory();
+  }
 
   handleSearch(searchTerm) {
     this.searchTerm = searchTerm;
@@ -41,22 +42,24 @@ export default class App {
     const articleList = new ArticleList(articles);
     articlesSection.appendChild(articleList.render());
 
-    this.paging.update(this.pageIndex, 20, total);
+    this.paging.update(this.pageIndex, 20, total, this.searchTerm);
     this.loading.classList.add('hidden');
   }
 
-  // runCategory() {
-  //   this.loading.classList.remove('hidden');
+  runCategory() {
+    this.loading.classList.remove('hidden');
 
-  //   searchByCategory(this.category, this.pageIndex)
-  //     .then(data => this.showArticles(data));
-  // }
+    searchByCategory(this.category, this.pageIndex)
+      .then(data => this.showArticles(data));
+  }
 
   runSearch() {
     this.loading.classList.remove('hidden');
 
     searchAllArticles(this.searchTerm, this.pageIndex)
-      .then(data => this.showArticles(data));
+      .then(data => {
+        this.showArticles(data);
+      });
   }
 
   render() {
@@ -69,8 +72,8 @@ export default class App {
     const search = new Search(searchTerm => this.handleSearch(searchTerm));
     searchSection.appendChild(search.render());
 
-    // const category = new Search(category => this.handleCategory(category));
-    // searchSection.appendChild(category.render());
+    const category = new Category(category => this.handleCategory(category));
+    searchSection.appendChild(category.render());
 
     const pagingSection = dom.getElementById('paging');
     this.paging = new Paging(pageIndex => this.handlePaging(pageIndex));
