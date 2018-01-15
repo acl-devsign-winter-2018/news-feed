@@ -1,11 +1,11 @@
 import Template from '../Template';
 import html from './app.html';
 import './app.css';
-import Search from '../search/Search';
 import Category from '../search/Category';
+import Search from '../search/Search';
 import Paging from '../search/Paging';
 import ArticleList from '../articles/ArticleList';
-import { searchAllArticles } from '../../services/newsApi';
+import { searchWithinCategory } from '../../services/newsApi';
 import { searchByCategory } from '../../services/newsApi';
 
 const template = new Template(html);
@@ -26,7 +26,11 @@ export default class App {
 
   handlePaging(pageIndex) {
     this.pageIndex = pageIndex;
-    this.runSearch();
+    if(this.category) { 
+      this.runCategory();
+    } else{
+      this.runSearch();
+    }
   }
 
   showArticles(data) {
@@ -56,7 +60,7 @@ export default class App {
   runSearch() {
     this.loading.classList.remove('hidden');
 
-    searchAllArticles(this.searchTerm, this.pageIndex)
+    searchWithinCategory(this.category, this.searchTerm, this.pageIndex)
       .then(data => {
         this.showArticles(data);
       });
@@ -67,13 +71,13 @@ export default class App {
 
     this.loading = dom.getElementById('loading');
     this.articlesSection = dom.getElementById('articles');
-
+    
     const searchSection = dom.getElementById('search');
-    const search = new Search(searchTerm => this.handleSearch(searchTerm));
-    searchSection.appendChild(search.render());
-
     const category = new Category(category => this.handleCategory(category));
     searchSection.appendChild(category.render());
+
+    const search = new Search(searchTerm => this.handleSearch(searchTerm));
+    searchSection.appendChild(search.render());
 
     const pagingSection = dom.getElementById('paging');
     this.paging = new Paging(pageIndex => this.handlePaging(pageIndex));

@@ -3,16 +3,20 @@ const NEWS_URL = 'https://newsapi.org/v2/';
 
 const storage = window.localStorage;
 
-export function searchAllArticles(searchTerm, pageIndex = 1) {
-  const url = `${NEWS_URL}everything?q=${searchTerm}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`;
-  return checkStorage(url);
-}
-
 export function searchByCategory(category, pageIndex = 1) {
-  const url = `${NEWS_URL}top-headlines?q=${category}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; // category: business entertainment general health science sports technology
-
+  const url = `${NEWS_URL}top-headlines?category=${category}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; // category: business entertainment general health science sports technology
   return checkStorage(url);
 }
+
+export function searchWithinCategory(category, searchTerm, pageIndex = 1) {
+  let url;
+  if(category) {
+    url = `${NEWS_URL}top-headlines?q=${searchTerm}&category=${category}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; // category: business entertainment general health science sports technology
+  } else{
+    url = `${NEWS_URL}everything?q=${searchTerm}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`;
+  }
+  return checkStorage(url);
+} //TODO: Create search within categories??
 
 function checkStorage(url) {
   const data = storage.getItem(url);

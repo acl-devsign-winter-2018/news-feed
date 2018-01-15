@@ -9,7 +9,7 @@ export default class Paging{
     this.onPage = onPage;
   }
 
-  update(pageIndex, perPage, total, searchInput) {
+  update(pageIndex, perPage, total) {
     const totalPages = Math.floor(total / perPage);
     this.total.textContent = `showing page ${pageIndex} of ${totalPages} (${total} total results)`;
     this.pageIndex = pageIndex;
