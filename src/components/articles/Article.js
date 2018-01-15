@@ -6,7 +6,7 @@ const template = new Template(html);
 
 export default class Article {
   constructor(article) {
-    this.article = article; //TODO: not sure if right?
+    this.article = article;
   }
 
   render() {
@@ -14,10 +14,12 @@ export default class Article {
     const article = this.article;
 
     dom.querySelector('.title').textContent = article.title;
-    dom.querySelector('.author').textContent = article.author ? article.author : "";
-    dom.querySelector('.description').textContent = article.description ? article.description : "";
-    dom.querySelector('.thumbnail').setAttribute('src', `${article.urlToImage ? article.urlToImage : ""}`);
+    dom.querySelector('.author').textContent = article.author ? article.author : 'N/A';
+    dom.querySelector('.description').textContent = article.description ? article.description : 'Click to read more...';
+    dom.querySelector('.thumbnail').setAttribute('src', `${article.urlToImage ? article.urlToImage : 'https://image.flaticon.com/icons/svg/8/8235.svg'}`);
     dom.querySelector('.thumbnail').setAttribute('alt', article.title);
+    dom.querySelectorAll('.article-link').forEach(element => element.setAttribute('href', article.url));
+    dom.querySelector('.published-date').textContent = new Date(article.publishedAt);
     
     return dom;
   }

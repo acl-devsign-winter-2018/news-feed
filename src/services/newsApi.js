@@ -13,10 +13,10 @@ export function searchWithinCategory(category, searchTerm, pageIndex = 1) {
   if(category) {
     url = `${NEWS_URL}top-headlines?q=${searchTerm}&category=${category}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; // category: business entertainment general health science sports technology
   } else{
-    url = `${NEWS_URL}everything?q=${searchTerm}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`;
+    url = `${NEWS_URL}everything?q=${searchTerm}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; //if search happens on base page without a category selection
   }
   return checkStorage(url);
-} //TODO: Create search within categories??
+}
 
 function checkStorage(url) {
   const data = storage.getItem(url);
