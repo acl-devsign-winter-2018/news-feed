@@ -18,7 +18,6 @@ export default class Search {
     const dom = template.render();
     this.searchInput = dom.querySelector('input');
     
-    
     const form = dom.querySelector('form');
     form.addEventListener('submit', event => this.handleSubmit(event));
 
