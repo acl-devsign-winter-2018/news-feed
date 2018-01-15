@@ -2,13 +2,18 @@ import Template from '../Template';
 import html from './app.html';
 import './app.css';
 import Search from '../search/Search';
+import { searchNews } from '../../service/newsApi';
 
 const template = new Template(html);
 
 export default class App {
 
   handleSearch(searchTerm) {
-    console.log('SEARCH:', searchTerm);
+    searchNews(searchTerm)
+      .then(data => {
+        console.log(data);
+      });
+
   }
   render() {
     const dom = template.render();
