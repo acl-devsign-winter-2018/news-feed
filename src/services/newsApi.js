@@ -13,7 +13,7 @@ export function searchWithinCategory(category, searchTerm, pageIndex = 1) {
   if(category) {
     url = `${NEWS_URL}top-headlines?q=${searchTerm}&category=${category}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; // category: business entertainment general health science sports technology
   } else{
-    url = `${NEWS_URL}everything?q=${searchTerm}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; //if search happens on base page without a category selection
+    url = `${NEWS_URL}everything?q=${searchTerm}&sortBy=popularity&page=${pageIndex}&apiKey=${KEY}`; //if search happens without a category selection
   }
   return checkStorage(url);
 }

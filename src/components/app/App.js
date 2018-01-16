@@ -42,7 +42,7 @@ export default class App {
     while(articlesSection.hasChildNodes()) {
       articlesSection.removeChild(articlesSection.lastChild);
     }
-
+  
     const articleList = new ArticleList(articles);
     articlesSection.appendChild(articleList.render());
 

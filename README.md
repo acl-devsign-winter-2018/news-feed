@@ -1,25 +1,16 @@
-News Feed App
+**Objective**
 ===
-
 Build a well-designed, responsive news feed web app using the [newsapi](https://newsapi.org) api.
+  * Follow Component architecture and modular thinking
+  * Clean code and project, attention to detail
+  * Design (a11y, semantic, usability, empathy)
+  * Working funtionality
 
-Follow the pattern for a VanillaJS Component architecture we used in class both in
-terms of code architecture and developer process.
+**Steps Taken**
+===
+Use component architecture to create a news application that will search within a selected category. The default category on page landing is general. Discover how to use the newsAPI. Create different fetch endpoints depending on category and search term. Have the results show no more than 20 per page. This took me around 13 hours to complete.
 
-The minimum requirement is to be able to search a term and have that drive the news feed results. But you are
-highly encouraged to think about usability and enhance. 
 
-## Project
-
-This is a solo lab (everyone needs to practice their JavaScript!). You are required to:
-
-* Collaborate, discuss and ask questions of both your peers and the instruction staff.
-* Follow the process of methodically "growing" your app
-* Make your code look like it could be in the demo project
-
-## Rubric
-
-* Follow Component architecture and modular thinking **5pts**
-* Clean code and project, attention to detail **5pts**
-* Design (a11y, semantic, usability, empathy) **5pts**
-* Working funtionality **5pts**
+**Changes / Reflection**
+===
+My first time using component architecture, so I struggled with how each componenet relates to one another in the DOM. I could not figure out how to link local images within the components. I appreciate how organized this method is and look forward to using it more in the future. NewsAPI has endpoints that are rather limiting. I wanted to be able to search within categories, and this only works using the "top-headlines" endpoint, which has much more limited number of results than the "everything" endpoint. Due to the limited number of results, I could not limit the country to only US.
