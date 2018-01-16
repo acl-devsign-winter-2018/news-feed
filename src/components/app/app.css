@@ -1,0 +1,23 @@
+ul{
+  list-style: none;
+  color: black;
+  margin: 0;
+  padding:0;
+}
+
+footer{
+  width: 100%;
+  height: 5vh;
+  /* margin-bottom: 0; */
+  padding: 4%;
+  background-color: rgb(25, 42, 68);
+  color: rgb(250, 250, 250);
+  position: fixed;
+  z-index: 1;
+}
+
+@media (min-width: 700px){
+  body{
+    width: 100vw;
+  }
+}

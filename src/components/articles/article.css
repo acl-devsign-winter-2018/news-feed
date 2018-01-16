@@ -1,0 +1,41 @@
+li{
+  list-style: none;
+  color: black;
+}
+
+.article{
+  margin: 0 3vw 3vw;
+  padding: 3% 3% 5% 3%;
+  text-decoration: none;
+}
+
+.article img{
+  /* position: absolute; */
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+}
+
+@media (min-width: 700px){
+    
+  ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap; 
+      /* width: 100vw;       */
+  }
+
+  li.article{
+      width: 30%;
+      margin: 0 auto;
+  }
+
+  li img{
+    /* position: absolute; */
+    margin-top: 2vw;
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+}
