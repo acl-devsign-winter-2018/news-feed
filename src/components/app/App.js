@@ -37,7 +37,7 @@ export default class App {
           newsSection.removeChild(newsSection.lastChild);
         }
 
-        const articleList = new Articles(articles);
+        const articleList = new ArticleList(articles);
         newsSection.appendChild(articleList.render());
 
         this.paging.update(this.pageIndex, 20, total);
