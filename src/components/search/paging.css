@@ -1,0 +1,22 @@
+.prev, .next {
+    font-size: 0.8rem;
+    padding: .5rem;
+    background-color: rgb(241, 241, 241);
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    transition: 0.3s ease all;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+#prev-next {
+    margin: 1rem 0 1.5rem;
+}
+
+.total {
+    margin: 1rem 0 0;
+}

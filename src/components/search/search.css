@@ -1,0 +1,39 @@
+#search-box {
+  border: .4rem solid #d1d1d1;
+  width: 85%;
+  padding: 1rem;
+  vertical-align: bottom;
+  font-size: 100%;
+}
+
+#search-button {
+  background-color: #d63d00;
+  color: white;
+  font: 1.1rem "Work Sans", sans serif;
+  letter-spacing: 1px;
+  vertical-align: bottom;
+  text-transform: uppercase;
+  padding: 1.3rem 1.6rem;
+  transition: 0.3s ease all;
+  margin: 1rem 0 0 0;
+}
+
+#search-button:hover {
+  background-color: #ff4800;
+}
+
+/*  -------- Media Queries ------- */
+
+/* Mobile */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #search-box {
+    width: 50%;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 480px) and (max-width: 1200px) {
+  #search-box {
+    width: 60%;
+  } 
+}
