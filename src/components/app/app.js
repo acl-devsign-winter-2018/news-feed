@@ -1,6 +1,7 @@
 import Template from '../Template';
 import html from './app.html';
 import Search from '../search/Search';
+import ArticleList from '../articles/ArticleList';
 import { searchNews } from '../../services/newsApi';
 
 const template = new Template(html);
@@ -19,14 +20,26 @@ export default class App{
 
     searchNews(this.searchTerm)
       .then(data => {
-      console.log(data);
-      })
+        const articles = data.articles;
+        // const total = data.totalResults;
+        console.log(data);
+        const articleSection = this.articleSection;
+
+        while(articleSection.hasChildNodes()){
+          articleSection.appendChild(articleSection.lastChild);
+        }
+
+        const articleList = new ArticleList(articles);
+        articleSection.appendChild(articleList.render());
+      });
 
   }
 
   render(){
     const dom = template.render();
     
+    this.articleSection = dom.getElementById('articles');
+
     const searchSection = dom.getElementById('search');
     const search = new Search(searchTerm => this.handleSearch(searchTerm));
     searchSection.appendChild(search.render());
