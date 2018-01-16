@@ -18,7 +18,13 @@ export default class Article{
     dom.querySelector('.publishedDate').textContent = article.publishedAt;
     dom.querySelector('.description').textContent = article.description;
 
-    
+    const img = dom.querySelector('.thumbnail');
+    if(article.urlToImage){
+      img.setAttribute('src', article.urlToImage);
+      img.setAttribute('alt', `${article.title} by ${article.author}`);
+    } else{
+      img.classList.add('hidden');
+    }
 
     return dom;
   }
