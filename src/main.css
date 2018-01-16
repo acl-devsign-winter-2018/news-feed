@@ -1,0 +1,43 @@
+body {
+  padding:0;
+  margin: 0;
+  font: 100%/1.5 sans-serif;
+  background-color: rgba(133, 178, 245, 0.303);
+  
+}
+
+header{
+  width: 100%;
+  height: 10vh;
+  /* margin-bottom: 13vh; */
+  padding: 4%;
+  background-color: rgb(25, 42, 68);
+  position: fixed;
+  z-index: 1;
+  
+  /* justify-content: center; */
+}
+
+main{
+  /* height: 100vh; */
+  position: relative;
+  padding-top: 16vh;
+}
+
+
+h1, h3, article h3{
+  font-family: 'Oswald', sans-serif;
+}
+
+h1{
+  margin: 0 auto;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: rgb(250, 250, 250);
+}
+
+
+
+
+
+

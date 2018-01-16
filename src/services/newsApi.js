@@ -1,5 +1,5 @@
 const KEY = '45c3ddb8dc424222895fcdb15224fe02';
-const NEWS_URL = 'https://newsapi.org/v2/everything?';
+const NEWS_URL = 'https://newsapi.org/v2/top-headlines?';
 
 const storage = window.localStorage;
 

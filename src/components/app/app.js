@@ -1,5 +1,6 @@
 import Template from '../Template';
 import html from './app.html';
+import './app.css';
 import Search from '../search/Search';
 import ArticleList from '../articles/ArticleList';
 import { searchNews } from '../../services/newsApi';

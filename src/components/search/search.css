@@ -1,0 +1,25 @@
+form{
+  padding: 3%;
+  color: rgb(14, 30, 55);
+  background-color: rgba(25, 42, 68, 0.125);
+
+}
+
+.clip {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+input{
+  width: 60%;
+  height: 25px;
+}
+
+button{
+  width: 30%;
+  height: 25px;
+  background-color: rgb(25, 42, 68);
+  color: rgb(250, 250, 250);
+  border: none;
+}
