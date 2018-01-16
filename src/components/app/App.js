@@ -25,12 +25,12 @@ export default class App {
     
     this.loading.classList.remove('hidden');
 
-    // searchNews(this.searchParams, this.pageIndex)
-    //   .then(data => {
-    //     const articles = data.articles;
-    //     const total = data.totalResults;
+    searchNews(this.searchParams, this.pageIndex)
+      .then(data => {
+        const articles = data.articles;
+        const total = data.totalResults;
 
-    //   })
+      });
   }
 
   render() {
