@@ -17,7 +17,7 @@ apiServices.getHeadLines = () => {
 };
 
 apiServices.searchNews = (SEARCH) => {
-  const SEARCH_URL = `https://newsapi.org/v2/everything?q=${SEARCH}&from=2018-01-12&sortBy=popularity&apiKey=${KEY}`;
+  const SEARCH_URL = `https://newsapi.org/v2/everything?q=${SEARCH}&sortBy=popularity&page=1&apiKey=${KEY}`;
   const data = storage.getItem(SEARCH_URL);
     if(data) return Promise.resolve(JSON.parse(data)); // eslint-disable-line
     
