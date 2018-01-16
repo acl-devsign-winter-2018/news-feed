@@ -1,0 +1,80 @@
+main {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+header {
+  background-color: rgb(49, 32, 143);
+  width: 100%;
+
+  h1 {
+    color: rgb(132,132,132);
+  }
+}
+
+/* hide screen-reader only text. https://webaim.org/techniques/css/invisiblecontent/ */
+.clip {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+#logo {
+  width: 50px;
+  display: inline-block;
+}
+
+#loading {
+  position: absolute;
+  z-index: 1;
+  font-size: 1.8rem;
+  font-weight: 500;
+  top: 0; bottom: 0;
+  right: 0; left: 0;
+  color: rgb(49, 32, 143);
+  background: white;
+  opacity: .7;
+  text-align: center;
+  padding-top: 100px;
+}
+
+footer {
+  position: fixed;
+  z-index: 100;
+  background: white;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: .8rem;
+}
+@media (min-width: 640px) {
+  #articles ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  #articles ul li {
+    width: 40%
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  #articles ul li {
+    width: 30%
+  }
+}

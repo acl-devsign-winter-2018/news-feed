@@ -1,0 +1,40 @@
+#hamburger-icon {
+  width: 40px;
+  position: absolute;
+  top: -2.5rem;
+  right: .5rem;
+}
+
+nav {
+  position: relative;
+}
+
+#categories {
+  background-color: rgb(132,132,132);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+nav > ul > li:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  #hamburger-icon {
+    display: none;
+  }
+
+  #categories {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    padding: .5rem;
+  }
+
+}
+
+@media (min-width: 960px) {
+  #categories {
+    font-size: 1.3rem;
+  }
+}

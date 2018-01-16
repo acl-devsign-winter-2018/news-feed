@@ -1,0 +1,33 @@
+
+.article {
+  background: white;
+  list-style: none;
+  margin: 1rem .5rem;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: space-between;
+
+  &:hover {
+    background: rgba(132,132,132, .2);
+  }
+
+}
+.title {
+  color: #31218f;
+
+  &:hover{
+    text-decoration: underline;
+    text-decoration-color: #31218f;
+  }
+
+}
+
+.thumbnail {
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 400px;
+}
+
+.author {
+  font-weight: 500;
+}

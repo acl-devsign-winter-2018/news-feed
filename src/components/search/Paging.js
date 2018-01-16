@@ -1,0 +1,34 @@
+import html from './paging.html';
+import './paging.css';
+import Template from '../Template';
+
+const template = new Template(html);
+
+export default class Paging{
+  constructor(onPage) {
+    this.onPage = onPage;
+  }
+
+  update(pageIndex, perPage, total) {
+    const totalPages = Math.floor(total / perPage);
+    this.total.textContent = totalPages === 0 ? `showing page ${pageIndex} of 1 (${total} total results)` : `showing page ${pageIndex} of ${totalPages} (${total} total results)`;
+    this.pageIndex = pageIndex;
+    this.previous.disabled = pageIndex <= 1;
+    this.next.disabled = pageIndex >= total;
+  }
+
+  render() {
+    const dom = template.render();
+
+    this.total = dom.querySelector('.total');
+    this.previous = dom.querySelector('.prev');
+    this.next = dom.querySelector('.next');
+
+    this.previous.addEventListener('click', () => this.onPage(this.pageIndex - 1));
+    this.next.addEventListener('click', () => this.onPage(this.pageIndex + 1));
+
+    return dom;
+  }
+
+
+}
