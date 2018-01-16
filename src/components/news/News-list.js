@@ -8,7 +8,6 @@ const template = new Template(html);
 export default class NewsList {
   constructor(news) {
     this.news = news;
-    console.log('newslist', this.news);
   }
   
   render() {

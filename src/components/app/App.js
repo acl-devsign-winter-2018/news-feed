@@ -10,12 +10,9 @@ const template = new Template(html);
 export default class App {
 
   handleSearch(searchTerm) {
-    this.searchTerm = searchTerm;
-    this.runSearch();
-  }
-
-  runSearch() {
-    Api.searchNews()
+    this.loading.classList.remove('hidden');
+    
+    Api.searchNews(searchTerm)
       .then(data => {
         const news = data.articles;
         const newsSection = this.newsSection;
@@ -27,10 +24,14 @@ export default class App {
         const newsList = new NewsList(news);
         newsSection.appendChild(newsList.render());
       });
+
+    this.loading.classList.add('hidden');
   }
-  
+ 
   render() {
     const dom = template.render();
+
+    this.loading = dom.getElementById('loading');
     this.newsSection = dom.getElementById('news');
 
     const searchSection = dom.getElementById('search');

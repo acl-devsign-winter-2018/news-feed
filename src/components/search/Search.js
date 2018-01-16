@@ -7,13 +7,14 @@ const template = new Template(html);
 export default class Search {
   constructor(onSearch) {
     this.onSearch = onSearch;
-    console.log('onsearch', onsearch);
+    console.log('onsearch', this.onSearch);
   }
 
   handleSubmit(event) {
     event.preventDefault();
     this.onSearch(this.searchInput.value);
   }
+
   
   render() {
     const dom = template.render();
