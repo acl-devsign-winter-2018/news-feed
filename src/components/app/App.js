@@ -37,6 +37,8 @@ export default class App {
     const searchSection = dom.getElementById('search');
     const search = new Search(searchTerm => this.handleSearch(searchTerm));
     searchSection.appendChild(search.render());
+
+    console.log(Api.getHeadLines());
     return dom;
   }
 }

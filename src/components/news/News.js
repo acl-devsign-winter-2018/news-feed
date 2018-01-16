@@ -18,6 +18,7 @@ export default class News {
     dom.querySelector('.publisher').textContent = article.source.name;
     dom.querySelector('.publishedAt').textContent = article.publishedAt;
     dom.querySelector('.description').textContent = article.description;
+    dom.querySelector('.url').setAttribute('href', article.url);
     
     const img = dom.querySelector('.thumbnail');
     if(article.urlToImage) {
