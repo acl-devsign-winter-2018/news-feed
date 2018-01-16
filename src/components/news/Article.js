@@ -6,13 +6,14 @@ const template = new Template(html);
 
 export default class Article {
   constructor(article) {
-    this.article = article.articles;
+    // console.log(article);
+    this.article = article;
   }
 
   render() {
     const dom = template.render();
     const article = this.article;
-
+    console.log('inside render', article);
     dom.querySelector('.title').textContent = article.title;
     dom.querySelector('.author').textContent = article.author;
     dom.querySelector('.publisher').textContent = article.publisher;
@@ -22,7 +23,7 @@ export default class Article {
     const img = dom.querySelector('.thumbnail');
     if(article.urlToImage) {
       img.setAttribute('src', article.urlToImage.thumbnail);
-      img.setAttribute('alt', `${article.title} by ${article.author[0]}`);
+      img.setAttribute('alt', `${article.title} by ${article.author}`);
     }
     else{
       img.classList.add('hidden');

@@ -50,6 +50,8 @@ export default class App {
 
     this.loading =  dom.getElementById('loading');
 
+    this.newsSection = dom.getElementById('articles');
+
     const searchSection = dom.getElementById('search');
     const search = new Search(searchParam => this.handleSearch(searchParam));
     searchSection.appendChild(search.render());
