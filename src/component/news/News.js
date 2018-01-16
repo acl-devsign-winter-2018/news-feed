@@ -5,9 +5,9 @@ import Template from '../Template';
 const template = new Template(html);
 
 export default class News {
-//   constructor(news) {
-//     this.article = news.articles;
-//   }
+  constructor(news) {
+    this.article = news.articles;
+  }
 
   render() {
     const dom = template.render();

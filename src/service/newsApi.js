@@ -18,5 +18,4 @@ export function searchNews(searchTerm){
       storage.setItem(url, JSON.stringify(data));
       return data;
     });
-
 }
