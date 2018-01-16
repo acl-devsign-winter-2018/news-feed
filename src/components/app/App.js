@@ -27,6 +27,7 @@ export default class App {
       });
 
     this.loading.classList.add('hidden');
+    this.headlineSection.classList.add('hidden');
   }
 
   render() {

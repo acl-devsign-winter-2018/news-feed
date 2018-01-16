@@ -1,4 +1,5 @@
 import html from './news-list.html';
+import './news-list.css';
 import Template from '../Template';
 import News from './News';
 

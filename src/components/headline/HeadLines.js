@@ -9,7 +9,7 @@ export default class HeadLines {
   
   render() {
     const dom = template.render();
-    const section = dom.getElementById('headlines');
+    const section = dom.querySelector('.news-container');
     console.log(section);
 
     Api.getHeadLines()
