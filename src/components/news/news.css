@@ -1,0 +1,12 @@
+.thumbnail {
+    width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+article {border-bottom: 2px solid #ddd;}
+
+.article p{ 
+    line-height: 1.4;
+}
