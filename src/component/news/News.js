@@ -11,7 +11,7 @@ export default class News {
 
   render() {
     const dom = template.render();
-    dom.querySelector('.title').textContent = this.title; //we had this.article.title but not sure if correct
+    dom.querySelector('.title').textContent = this.articles.title; //we had this.article.title but not sure if correct
     dom.querySelector('.author').textContent = this.author[0];
     dom.querySelector('.publishedAt').textContent = this.publishedAt;
     dom.querySelector('.description').textContent = this.description;
