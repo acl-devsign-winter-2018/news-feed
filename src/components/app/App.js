@@ -3,6 +3,7 @@ import html  from './app.html';
 import './app.css';
 import Search from '../search/Search';
 import Paging from '../search/Paging';
+import ArticleList from '../news/ArticleList';
 import { searchNews } from '../../services/newsfeed.api';
 
 
@@ -30,6 +31,17 @@ export default class App {
         const articles = data.articles;
         const total = data.totalResults;
 
+        const newsSection = this.newsSection;
+
+        while(newsSection.hasChildNodes()) {
+          newsSection.removeChild(newsSection.lastChild);
+        }
+
+        const articleList = new Articles(articles);
+        newsSection.appendChild(articleList.render());
+
+        this.paging.update(this.pageIndex, 20, total);
+        this.loading.classList.add('hidden');
       });
   }
 
