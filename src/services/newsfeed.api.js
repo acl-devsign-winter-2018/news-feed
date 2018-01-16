@@ -7,7 +7,8 @@ export function searchNews(searchParams) {
   const url = `${API_URL}q=${searchParams}&apiKey=${KEY}`;
 
   const data = storage.getItem(url);
-  // console.log('data', data);
+  
+  //COMMENT: Need to figure out why it does not like Promise
   if(data) return Promise.resolve(JSON.parse(data));
 
   return fetch(url)

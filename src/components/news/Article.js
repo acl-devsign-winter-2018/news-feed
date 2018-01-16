@@ -13,7 +13,7 @@ export default class Article {
   render() {
     const dom = template.render();
     const article = this.article;
-    console.log('inside render', article);
+    // console.log('inside render', article);
     dom.querySelector('.title').textContent = article.title;
     dom.querySelector('.author').textContent = article.author;
     dom.querySelector('.publisher').textContent = article.publisher;
@@ -22,7 +22,8 @@ export default class Article {
     
     const img = dom.querySelector('.thumbnail');
     if(article.urlToImage) {
-      img.setAttribute('src', article.urlToImage.thumbnail);
+      console.log(article.urlToImage);
+      img.setAttribute('src', article.urlToImage);
       img.setAttribute('alt', `${article.title} by ${article.author}`);
     }
     else{
