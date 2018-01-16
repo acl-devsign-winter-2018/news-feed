@@ -72,10 +72,11 @@ export default class App {
     this.loading = dom.getElementById('loading');
     this.articlesSection = dom.getElementById('articles');
     
-    const searchSection = dom.getElementById('search');
+    const headerSection = dom.getElementById('head');
     const category = new Category(category => this.handleCategory(category));
-    searchSection.appendChild(category.render());
-
+    headerSection.appendChild(category.render());
+    
+    const searchSection = dom.getElementById('search');
     const search = new Search(searchTerm => this.handleSearch(searchTerm));
     searchSection.appendChild(search.render());
 

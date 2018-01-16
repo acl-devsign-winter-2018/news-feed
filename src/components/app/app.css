@@ -67,6 +67,10 @@ footer {
   #articles ul li {
     width: 40%
   }
+
+  footer {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 960px) {

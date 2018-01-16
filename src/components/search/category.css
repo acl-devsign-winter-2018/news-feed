@@ -1,7 +1,7 @@
 #hamburger-icon {
   width: 40px;
   position: absolute;
-  top: -3.8rem;
+  top: -2.5rem;
   right: .5rem;
 }
 
@@ -17,4 +17,24 @@ nav {
 
 nav > ul > li:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  #hamburger-icon {
+    display: none;
+  }
+
+  #categories {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    padding: .5rem;
+  }
+
+}
+
+@media (min-width: 960px) {
+  #categories {
+    font-size: 1.3rem;
+  }
 }
