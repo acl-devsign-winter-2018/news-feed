@@ -1,10 +1,8 @@
 import html from './category.html';
-import searchHtml from './search.html';
 import './category.css';
 import Template from '../Template';
 
 const template = new Template(html);
-const searchTemplate = new Template(searchHtml);
 
 export default class Category {
   constructor(onClick) {

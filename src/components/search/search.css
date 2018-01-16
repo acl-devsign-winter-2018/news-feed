@@ -1,18 +1,22 @@
-form {margin-bottom: 1rem;}
+form {
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
 
 #search-box {
-  width: 75%;
-  border: 1px solid #555;
+  width: 80%;
+  border: 1px solid #848484;
   padding: .5rem;
   vertical-align: bottom;
 }
 
 #search-button {
-  background: steelblue;
-  color: white;
+  background: #31218f;
+  color: #c7c4c4;
   border: none;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-weight: 500;
+  font-size: 1.3rem;
   padding: .25rem .5rem;
   vertical-align: bottom;
 }

@@ -16,6 +16,7 @@ export default class Article {
     dom.querySelector('.title').textContent = article.title;
     dom.querySelector('.author').textContent = article.author ? article.author : 'N/A';
     dom.querySelector('.description').textContent = article.description ? article.description : 'Click to read more...';
+    dom.querySelector('.source').textContent = article.source.name ? article.source.name : 'N/A';
     dom.querySelector('.thumbnail').setAttribute('src', `${article.urlToImage ? article.urlToImage : 'https://image.flaticon.com/icons/svg/8/8235.svg'}`);
     dom.querySelector('.thumbnail').setAttribute('alt', article.title);
     dom.querySelectorAll('.article-link').forEach(element => element.setAttribute('href', article.url));
