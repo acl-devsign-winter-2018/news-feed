@@ -7,7 +7,6 @@ const template = new Template(html);
 export default class Search {
   constructor(onSearch) {
     this.onSearch = onSearch;
-    console.log('onsearch', this.onSearch);
   }
 
   handleSubmit(event) {
