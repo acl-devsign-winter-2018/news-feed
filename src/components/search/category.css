@@ -1,0 +1,16 @@
+#hamburger-icon {
+  width: 10%;
+  position: absolute;
+  top: -40px;
+  right: 10px;
+}
+
+#categories {
+  background-color: grey;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+nav > ul > li:hover {
+  text-decoration: underline;
+}

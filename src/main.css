@@ -1,12 +1,18 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   font: 400 100%/1.5 'Roboto Mono', monospace, 'sans serif';
-  padding: 1rem;
+  padding: .5rem;
 }
 h1 {
   font-weight: 700;
   font-size: 2rem;
-  margin-bottom: 1rem;
 }
+
 h2 {
   font-weight: 500;
   font-size: 1.4rem;

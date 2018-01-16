@@ -31,6 +31,8 @@ export default class Category {
     const categoryNav = dom.querySelector('ul');
     categoryNav.addEventListener('click', event => this.handleCategoryClick(event, event.target), false); //send over event as well as targeted li
 
+    this.onClick('general'); //start the page with something
+
     return dom;
   }
 }
