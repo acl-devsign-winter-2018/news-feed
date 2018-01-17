@@ -1,0 +1,29 @@
+/* 
+    font-family: 'Nova Mono', monospace; 
+*/
+html, body, #root, header, main {
+    width: 100%;
+    min-width: 375px;
+}
+
+html, select, input, button {
+    font-family: 'Fira Mono', monospace;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+i, em {
+    font-style: italic
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+#clearfix {
+    content: " ";
+    height: 3rem;
+}

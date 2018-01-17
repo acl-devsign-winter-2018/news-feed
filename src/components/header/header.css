@@ -1,0 +1,15 @@
+
+
+#header-title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 2.5rem;
+    padding: 0.1em 0.3em;
+    background: black;
+    font-family: 'Nova Mono', monospace; 
+    font-size: 250%;
+    color: white;
+}

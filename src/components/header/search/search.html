@@ -1,0 +1,22 @@
+<section id="search-bar">
+    <input id="search-bar-input" type="text" placeholder="search for..." name="input"/>
+    <button name="submit">search</button>
+</section>
+<section id="search-parameters">
+    <label>sort by:</label>
+    <select id="sort-by" value="popularity">
+        <option value="popularity">popularity</option>
+        <option value="publishedAt">most recent</option>
+        <option value="relevancy">relevancy</option>
+    </select>
+    <label>today only:</label>
+    <input id="today-only" type="checkbox"/>
+</section>
+<section id="paging">
+    <button id="prev-page"><</button>
+    <section id="page">
+        <label>page</label>
+        <select id="page-select" data-max="0"></select>
+    </section>
+    <button id="next-page">></button>
+</section>
