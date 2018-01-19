@@ -12,22 +12,20 @@ export default class App {
   handleSearch(searchTerm) {
     searchNews(searchTerm)
       .then(data => {
-        const news = data.items;
-        const total = data.totalResults;
-
         console.log(data);
+        const news = data.articles;
+        // const total = data.totalResults;
 
         const newsSection = this.newsSection;
 
         while(newsSection.hasChildNodes()) {
-          newsSection.removeChild(newsSection.lastChild());
-
-          const newsFeed= new NewsFeed(news);
-          newsSection.appendChild(newsFeed.render());
+          newsSection.removeChild(newsSection.lastChild);
         }
+        const newsFeed = new NewsFeed(news);
+        newsSection.appendChild(newsFeed.render());
       });
-
   }
+
   render() {
     const dom = template.render();
 
@@ -36,7 +34,6 @@ export default class App {
     const searchSection = dom.getElementById('search');
     const search = new Search(searchTerm => this.handleSearch(searchTerm));
     searchSection.appendChild(search.render());
-
 
     return dom;
   }

@@ -1,13 +1,11 @@
 const KEY = '3a73eda8828f4f74a3e66753884a13a8';
-const NEWS_URL = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${KEY}`;
+const NEWS_URL = `https://newsapi.org/v2/top-headlines?apiKey=${KEY}`;
 
 const storage = window.localStorage;
 
-export function searchNews(searchTerm){
+export function searchNews(searchTerm) {
   const url = `${NEWS_URL}&q=${searchTerm}&maxResults=40`;
   //defaults to 10 bumping it up to 40
-
-  // .then(response => response.json());
 
   const data = storage.getItem(url);
   if(data) return Promise.resolve(JSON.parse(data));

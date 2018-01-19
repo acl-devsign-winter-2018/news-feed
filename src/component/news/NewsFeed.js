@@ -4,12 +4,12 @@ import News from './News';
 
 const template = new Template(html);
 
-export default class NewsFeed{
+export default class NewsFeed {
   constructor(news) {
     this.news = news;
   }
 
-  render(){
+  render() {
     const dom = template.render();
     const ul = dom.querySelector('ul');
 
