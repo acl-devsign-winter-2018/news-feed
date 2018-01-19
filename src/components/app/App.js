@@ -37,7 +37,7 @@ export default class App {
 
     const pagingSection = dom.getElementById('paging');
     const paging = new Paging(pageIndex => this.handlePaging(pageIndex));
-    pagingSection.appenChild(paging.render());
+    pagingSection.appendChild(paging.render());
     return dom;
   }
 }
