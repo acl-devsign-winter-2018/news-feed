@@ -8,12 +8,12 @@ body {
 
 header{
   width: 100%;
-  height: 10vh;
+  /* height: 10vh; */
   /* margin-bottom: 13vh; */
   padding: 4%;
   background-color: rgb(25, 42, 68);
-  position: fixed;
-  z-index: 1;
+  /* position: fixed;
+  z-index: 1; */
   
   /* justify-content: center; */
 }
@@ -21,7 +21,7 @@ header{
 main{
   /* height: 100vh; */
   position: relative;
-  padding-top: 16vh;
+  /* padding-top: 16vh; */
 }
 
 

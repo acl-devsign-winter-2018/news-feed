@@ -2,6 +2,7 @@ import Template from '../Template';
 import html from './app.html';
 import './app.css';
 import Search from '../search/Search';
+import Paging from '../paging/Paging';
 import ArticleList from '../articles/ArticleList';
 import { searchNews } from '../../services/newsApi';
 
@@ -14,6 +15,11 @@ export default class App{
     this.pageIndex = 0;
     this.runSearch();
   }
+
+  handlePaging(pageIndex){
+    this.pageIndex = pageIndex;
+    this.runSearch();
+  }
   
   runSearch(){
 
@@ -22,16 +28,19 @@ export default class App{
     searchNews(this.searchTerm)
       .then(data => {
         const articles = data.articles;
-        // const total = data.totalResults;
-        console.log(data);
+        const total = data.totalResults;
+        
         const articleSection = this.articleSection;
 
         while(articleSection.hasChildNodes()){
-          articleSection.appendChild(articleSection.lastChild);
+          articleSection.removeChild(articleSection.lastChild);
         }
 
         const articleList = new ArticleList(articles);
         articleSection.appendChild(articleList.render());
+
+        // this.paging.update(this.pageIndex, 20, total);
+        // this.loading.classlist.add('hidden');
       });
 
   }
@@ -45,6 +54,9 @@ export default class App{
     const search = new Search(searchTerm => this.handleSearch(searchTerm));
     searchSection.appendChild(search.render());
 
+    // const pagingSection = dom.getElementById('paging');
+    // this.paging = new Paging(pageIndex => this.handlePaging(pageIndex));
+    // pagingSection.appendChild(this.paging.render());
 
     return dom;
   }

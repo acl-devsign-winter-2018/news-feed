@@ -1,6 +1,8 @@
 li{
   list-style: none;
   color: black;
+  background-color: rgba(255, 255, 255, .6);
+
 }
 
 .article{
