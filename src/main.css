@@ -1,0 +1,14 @@
+body {
+    margin: 1rem;
+}
+
+h1{
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    margin: 2rem;
+}
+
+#search-box {
+    margin-left: 2rem;
+}

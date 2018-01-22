@@ -1,0 +1,22 @@
+.title {
+    font-size: 1.5rem;
+    font-style: bold;
+    align-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    padding: .05rem;
+}
+
+.article {
+    flex-direction: row;
+    padding-bottom: 1rem;
+}
+
+img {
+    width: 20rem;
+}

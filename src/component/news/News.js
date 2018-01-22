@@ -5,20 +5,20 @@ import Template from '../Template';
 const template = new Template(html);
 
 export default class News {
-//   constructor(news) {
-//     this.article = news.articles;
-//   }
+  constructor(news) {
+    this.article = news;
+  }
 
   render() {
     const dom = template.render();
-    dom.querySelector('.title').textContent = this.title; //we had this.article.title but not sure if correct
-    dom.querySelector('.author').textContent = this.author[0];
-    dom.querySelector('.publishedAt').textContent = this.publishedAt;
-    dom.querySelector('.description').textContent = this.description;
+    dom.querySelector('.title').textContent = this.article.title;
+    dom.querySelector('.author').textContent = this.article.author;
+    dom.querySelector('.publishedAt').textContent = this.article.publishedAt;
+    dom.querySelector('.description').textContent = this.article.description;
     
     const img = dom.querySelector('.urlToImage');
-    img.setAttribute('src', this.urlToImage);
-    img.setAttribute('alt', `${this.title} by ${this.author[0]}`);
+    img.setAttribute('src', this.article.urlToImage);
+    img.setAttribute('alt', `${this.article.title} by ${this.article.author}`);
 
     return dom;
   }
