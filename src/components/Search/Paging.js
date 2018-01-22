@@ -1,5 +1,5 @@
 import html from './paging.html';
-import './paging/.css';
+import './paging.css';
 import Template from '../Template';
 
 const template = new Template(html);
