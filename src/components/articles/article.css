@@ -18,19 +18,42 @@ li{
   display: block;
 }
 
-@media (min-width: 700px){
+@media (min-width: 420px){
+  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    align-content: flex-start;
+  } 
+  
+  li.article{
+    width: 40%;
+    margin: 2vw auto;
+}
+
+  li img{
+    margin-top: 2vw;
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+}
+
+@media (min-width: 760px){
     
   ul{
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       flex-wrap: wrap; 
+      align-content: flex-start;
       /* width: 100vw;       */
   }
 
   li.article{
-      width: 30%;
-      margin: 0 auto;
+      width: 25%;
+      margin: 2vw auto;
   }
 
   li img{

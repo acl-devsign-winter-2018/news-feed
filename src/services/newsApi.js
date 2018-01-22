@@ -4,7 +4,7 @@ const NEWS_URL = 'https://newsapi.org/v2/everything?';
 const storage = window.localStorage;
 
 export function searchNews(searchTerm){
-  const url = `${NEWS_URL}q=${searchTerm}&apiKey=${KEY}`;
+  const url = `${NEWS_URL}q=${searchTerm}&sortBy=popularity&apiKey=${KEY}`;
 
   return fetch(url)
     .then(response => response.json())
